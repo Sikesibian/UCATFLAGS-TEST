@@ -3,6 +3,10 @@
     to { opacity: 1; }
 }
 
+.kg { word-spacing: 1em; }
+.kg2 { word-spacing: 2em; }
+.kg3 { word-spacing: 10px; }
+
 body {
     font-family: Arial, sans-serif, Ubuntu;
     background-color: rgb(0, 0, 0);
