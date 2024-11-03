@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <iframe src="./src/loading/loading.html" style="position:absolute; top:0; left:0; width:100vw; height: 100vh; z-index: 9999;" id="Loading"></iframe>
     <ul class="icon-nav">
         <li> 
             <a href = "#n1" id = "k0" onClick = "selected(0);">
@@ -56,7 +57,7 @@
         </li>
     </ul>
     <div class="content" id="n0">
-        <iframe src="ucatflagsindex.html"></iframe>
+        <iframe src="./src/loading/loading.html" style="position:absolute; top:0; left:0; width:100vw; height: 100vh; display: block;" id="n0Loading"></iframe>
     </div>
     <div class="content" id="n1">
         <iframe src="./warmup/ppc/ppc.html"></iframe>
@@ -77,6 +78,26 @@
         <iframe src="./warmup/notice/notice.html"></iframe>
     </div>
     <script>
+        let loader = document.getElementById("Loading");
+        var iframe = document.createElement("iframe");
+        iframe.id = "iframe0";
+        iframe.parentElement = document.getElementById("n0");
+        window.onload = function () {
+            loader.parentNode.removeChild(loader);
+            iframe.src = "./ucatflagsindex.html";
+            if (iframe.attachEvent){
+                iframe.attachEvent("onload", function(){
+                    document.getElementById("n0Loading").style.display = "none";
+                });
+            } else {
+                iframe.onload = function(){
+                    document.getElementById("n0Loading").style.display = "none";
+                };
+            }
+            document.body.appendChild(iframe);
+        }
+    </script>
+    <script>
         const n = 6;
         function selected(k) {
             for (let i = 0; i <= n; i++) {
@@ -86,7 +107,7 @@
             document.getElementById("k" + String(k)).classList.add("active");
             document.getElementById("n" + String(k)).style.display = "";
         }
-        selected(6);
+        selected(n);
     </script>
     <script src="./src/js/nav0.js"></script>
 </body>

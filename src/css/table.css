@@ -38,37 +38,45 @@ td a:hover {
     text-decoration: underline;
 }
 
-table, th, td {
+table,
+th,
+td {
     border: 1px solid black;
     border-collapse: collapse;
 }
-th, td {
+
+th,
+td {
     padding: 8px;
     text-align: left;
 }
 
-/* <= 568px */
 @media screen and (max-width: 600px) {
     table {
         border: 0;
     }
+
     table thead {
         display: none;
     }
+
     table tr {
         margin-bottom: 10px;
         display: block;
         border-bottom: 2px solid #ddd;
     }
+
     table td {
         display: block;
         text-align: left;
         font-size: 13px;
         border-bottom: 1px dotted #ccc;
     }
+
     table td:last-child {
         border-bottom: 0;
-   }
+    }
+
     table td:before {
         content: attr(data-label);
         float: left;
