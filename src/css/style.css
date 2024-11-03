@@ -22,7 +22,7 @@ body {
 /* logo样式 */
 .ucatflagslogo {
     font-size: 0.5rem;
-    font-family: Consolas, "Consolas", Ubuntu;
+    font-family: 'Courier New', monospace, Consolas, Ubuntu;
     text-align: center;
     font-weight: bolder;
     white-space: pre-wrap;
@@ -106,21 +106,3 @@ body {
 .custom-title span:nth-child(4) {
     color: #ffffff;
 }
-/* 
-@media screen and (max-width: 600px) {
-    body { 
-        font-size: 14px;
-    }
-    .menu-bar {
-        padding: 10px 5px;
-    }
-    .menu-bar a {
-        font-size: 16px;
-    }
-    .menu-bar img {
-        height: 30px;
-    }
-    .container {
-        width: 90%;
-    }
-} */
