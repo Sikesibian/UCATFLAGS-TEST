@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap');
+
 .menu-bar {
-  font-family: "SYST", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Noto Serif SC', sans-serif, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   position: fixed;
   top: 0;
   right: 0;
