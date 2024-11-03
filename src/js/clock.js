@@ -44,4 +44,4 @@ function updateTimeAndDate() {
     }
 }
 updateTimeAndDate(); 
-setInterval(updateTimeAndDate, 1000);
+setInterval(updateTimeAndDate, 100);
