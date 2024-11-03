@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap');
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
 .kg { word-spacing: 1em; }
 .kg2 { word-spacing: 2em; }
 .kg3 { word-spacing: 10px; }

@@ -1,16 +1,4 @@
 LEN = 15;
-function genNumberTubes(l = LEN){
-    const div_numberTube = document.getElementById("clocknumber");
-    for (let i = 0; i < l; i++) {
-        div_numberTube.innerHTML += "<div class=\"col\">\
-                    <div>8</div>\
-                    <div id=\"char" + i + "1\">0</div>\
-                    <div id=\"char" + i + "2\">0</div>\
-                </div>";
-    }
-}
-
-genNumberTubes();
 
 function calculateTimeDifference(targetDate, targetTime) {
     const now = new Date();

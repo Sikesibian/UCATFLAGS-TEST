@@ -1,6 +1,6 @@
 var docEl = document.documentElement;
 function setRemUnit () {
-    var rem = docEl.clientWidth / 30;
+    var rem = docEl.clientWidth / 36;
     docEl.style.fontSize = rem + 'px'
 }
 

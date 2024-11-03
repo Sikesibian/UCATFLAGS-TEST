@@ -27,8 +27,8 @@ iframe {
 
 div.content {
     position: absolute;
-    width: calc(100% - 3rem);
-    padding: 1px 0;
+    width: 100%;
+    padding: 0;
     top: 0;
     right: 0;
     background-repeat: no-repeat;
