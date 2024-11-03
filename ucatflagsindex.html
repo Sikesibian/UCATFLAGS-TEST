@@ -8,15 +8,7 @@
     <style>
         @import url('https://fonts.cdnfonts.com/css/lcd');
         @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap');
-        /*
-        @font-face {
-            font-family: 'LCD';
-            src: url("./src/font/digitalism.ttf");
-            font-weight: normal;
-            style: normal;
-        }
-        */
-
+        
         * {
             box-sizing: border-box
         }
@@ -699,9 +691,75 @@
         <p>本章程的解释权由 UCATFLAGS 组委会所有。</p>
     </div>
 
-    <script src="./src/js/style.js"></script>
-    <script src="./src/js/clock.js"></script>
-    <script src="./src/js/nav.js"></script>
+    <script>
+        var docEl = document.documentElement;
+        function setRemUnit () {
+            var rem = docEl.clientWidth / 36;
+            docEl.style.fontSize = rem + 'px'
+        }
+
+        setRemUnit()
+
+        window.addEventListener('resize', setRemUnit)
+        window.addEventListener('pageshow', function (e) {
+            if (e.persisted) {
+                setRemUnit()
+            }
+        })
+    </script>
+    <script>
+        LEN = 15;
+        function calculateTimeDifference(targetDate, targetTime) {
+            const now = new Date();
+            const targetDateTime = new Date(targetDate + ' ' + targetTime);
+        
+            const differenceInMilliseconds = targetDateTime - now;
+            const differenceInSeconds = Math.floor(differenceInMilliseconds / 1000);
+            const differenceInMinutes = Math.floor(differenceInSeconds / 60);
+            const differenceInHours = Math.floor(differenceInMinutes / 60);
+            const differenceInDays = Math.floor(differenceInHours / 24);
+        
+            let remainingHours = differenceInHours % 24;
+            let remainingMinutes = differenceInMinutes % 60;
+            let remainingSeconds = differenceInSeconds % 60;
+        
+            let timeDifferenceStr = '';
+            timeDifferenceStr += differenceInDays + 'd ';
+            timeDifferenceStr += remainingHours.toString().padStart(2, '0') + 'h ';
+            timeDifferenceStr += remainingMinutes.toString().padStart(2, '0') + 'm ';
+            timeDifferenceStr += remainingSeconds.toString().padStart(2, '0') + 's';
+            return timeDifferenceStr;
+        }
+        function updateTimeAndDate() {
+            const displayStr = calculateTimeDifference('2024-11-26', '08:00:00');
+            for (let i = 0; i < LEN; i++) { 
+                document.getElementById('char' + i + '1').textContent = displayStr[i]; 
+                document.getElementById('char' + i + '2').textContent = displayStr[i];
+            }
+            requestAnimationFrame(updateTimeAndDate);
+        }
+        updateTimeAndDate();
+    </script>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLink = document.querySelector('.menu-bar-link');
+        hamburger.addEventListener('click', () => {  
+            navLink.classList.toggle('hide');
+            hamburger.classList.toggle('active');
+        });
+        
+        navLink.addEventListener('click', () => {  
+            navLink.classList.toggle('hide');
+            hamburger.classList.toggle('active');
+        });
+        
+        window.onresize = function(){
+            if(window.innerWidth > 600){
+                navLink.classList.remove('hide');
+                hamburger.classList.add('active');
+            }
+        }
+    </script>
 </body>
 
 </html>

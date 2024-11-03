@@ -24,12 +24,23 @@ function calculateTimeDifference(targetDate, targetTime) {
     timeDifferenceStr += remainingSeconds.toString().padStart(2, '0') + 's';
     return timeDifferenceStr;
 }
+// function updateTimeAndDate() {
+//     const displayStr = calculateTimeDifference('2024-11-26', '08:00:00');
+//     for (let i = 0; i < LEN; i++) { 
+//         document.getElementById('char' + i + '1').textContent = displayStr[i]; 
+//         document.getElementById('char' + i + '2').textContent = displayStr[i];
+//     }
+// }
+// updateTimeAndDate(); 
+// setInterval(updateTimeAndDate, 100);
+
 function updateTimeAndDate() {
     const displayStr = calculateTimeDifference('2024-11-26', '08:00:00');
     for (let i = 0; i < LEN; i++) { 
         document.getElementById('char' + i + '1').textContent = displayStr[i]; 
         document.getElementById('char' + i + '2').textContent = displayStr[i];
     }
+    requestAnimationFrame(updateTimeAndDate);
 }
-updateTimeAndDate(); 
-setInterval(updateTimeAndDate, 100);
+
+updateTimeAndDate();
